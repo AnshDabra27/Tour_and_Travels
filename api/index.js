@@ -5,6 +5,7 @@ import authRoute from "./routes/authRoute.js"
 import usersRoute from "./routes/usersRoute.js"
 import hotelsRoute from "./routes/hotelsRoute.js"
 import roomsRoute from "./routes/roomsRoute.js"
+import cookieParser from "cookie-parser"
 const app = express()
 dotenv.config()
 
@@ -28,7 +29,7 @@ app.listen(8800,()=>{
 })
 
 //middlewares
-
+app.use(cookieParser())
 app.use(express.json())
 
 app.use('/api/auth',authRoute);
